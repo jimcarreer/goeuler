@@ -4,19 +4,19 @@ package main
 import "fmt"
 
 // I didn't write a program for this, the answer is pretty obvious
-// Consider :
+// Consider 1 - 10 factored to primes :
 // 1 2 3 (2 2) 5 (2 3) 7 (2 2 2) (3 3) (2 5)
 // 2520 factored:
 // 2 2 2 3 3 5 7
+// 
 // We merely need to find the lowest power of each prime <= 20
 // that is highest power of a prime for every composite <= 20:
 // 1 2 3 (2 2) 5 (2 3) 7 (2 2 2) (3 3) (2 5) 11 (2 2 3) 13 (2 7) (3 5) (2 2 2 2) 17 (2 9) (2 2 5)
 // For 2 = 2 2 2 2 (16)
 // For 3 = 3 3 (9)
-// All the rest either contain different primes of power 1
+// All the rest of the composites are products of primes of power 1 or powers of 2 and 3 less than 4 and 2 (respectively)
 // A general solution to the problem would require an input X being the maximum factor, factoring each number 1 ... X to prime lists
-// and determining the maximum power of each prime under X iteraviely by counting their appearace in the list
-
+// and determining the maximum power of each prime under X iteraviely by counting their appearace in the factor lists of each composite
 
 func main() {
     var primes = []int{  2,  3,  5,  7, 11, 13, 17, 19}
